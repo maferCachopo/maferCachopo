@@ -30,9 +30,9 @@ Soy una apasionada de la tecnología con una base sólida en **Ingeniería Infor
 ---
 
 ### 📈 Proyectos Recientes
-- **Yeka Coach Academy:** Lideré la migración y desarrollo web desde cero, integrando tracking de conversiones y optimización SEO.
+- **Yeka Coach Academy:** Lideré la migración y desarrollo web desde cero, integrando tracking de conversiones y optimización SEO. https://yekacoach.com/ 
 - **Villar Technologies:** Colaboré en el desarrollo de microtareas con Laravel y Vue.js dentro de un equipo de programadores Junior.
-- **Neuro desarrollo en Familia:** Implementación del sitio web para el Centro Infantil para el Neurodesarrollo en Familia en Bogotá.
+- **Neuro desarrollo en Familia:** Implementación del sitio web para el Centro Infantil para el Neurodesarrollo en Familia en Bogotá. https://www.neurofamilia.com/
 
 ---
 
