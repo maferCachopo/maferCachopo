@@ -5,57 +5,215 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mafer Cachopo | Portafolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg-pastel: #fdfcf0; /* Crema muy suave */
-            --primary-pastel: #a2d2ff; /* Azul pastel */
-            --secondary-pastel: #bde0fe; /* Celeste claro */
-            --accent-pastel: #ffafcc; /* Rosa/Coral pastel */
-            --text-dark: #4a4e69; /* Gris azulado oscuro */
+            --bg-color: #f8fafc;
+            --primary: #6366f1; /* Indigo Moderno */
+            --primary-dark: #4f46e5;
+            --accent: #ec4899; /* Rosa vibrante */
+            --text-main: #1e293b;
+            --text-muted: #64748b;
             --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.8);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-pastel); color: var(--text-dark); line-height: 1.6; }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
 
-        /* Navegación */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 10%; background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .logo { font-weight: bold; font-size: 1.5rem; color: var(--text-dark); }
-        .logo span { color: var(--primary-pastel); }
-        .nav-links { list-style: none; display: flex; gap: 2rem; }
-        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; transition: 0.3s; }
-        .nav-links a:hover { color: var(--accent-pastel); }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-        /* Hero Section */
-        .hero { display: flex; align-items: center; justify-content: space-between; padding: 5rem 10%; min-height: 80vh; gap: 2rem; }
-        .hero-content { flex: 1; }
-        .hero-content h2 { font-size: 1.2rem; color: var(--accent-pastel); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 2px; }
-        .hero-content h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; color: var(--text-dark); }
-        .hero-content p { font-size: 1.1rem; margin-bottom: 2rem; max-width: 500px; color: #6b705c; }
+        h1, h2, h3, .logo { font-family: 'Poppins', sans-serif; }
 
-        .hero-image { flex: 1; display: flex; justify-content: center; position: relative; }
-        .hero-image img { width: 400px; height: 400px; border-radius: 50%; object-fit: cover; border: 15px solid var(--white); box-shadow: 0 20px 40px rgba(0,0,0,0.1); background: var(--secondary-pastel); }
+        /* --- Navegación --- */
+        nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 1.2rem 10%; 
+            background: var(--glass); 
+            backdrop-filter: blur(12px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
 
-        /* Botones */
-        .btn-container { display: flex; gap: 1rem; }
-        .btn { padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.4s; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; }
-        .btn-primary { background-color: var(--primary-pastel); color: var(--text-dark); }
-        .btn-primary:hover { background-color: var(--secondary-pastel); transform: translateY(-3px); }
-        .btn-download { background-color: var(--accent-pastel); color: white; }
-        .btn-download:hover { opacity: 0.9; transform: translateY(-3px); }
+        .logo { 
+            font-weight: 700; 
+            font-size: 1.4rem; 
+            color: var(--text-main);
+            letter-spacing: -1px;
+        }
 
-        /* Stats */
-        .stats { display: flex; gap: 4rem; margin-top: 3rem; }
-        .stat-item h3 { font-size: 2.5rem; color: var(--text-dark); }
-        .stat-item span { color: var(--primary-pastel); }
-        .stat-item p { font-size: 0.9rem; text-transform: uppercase; color: #8d99ae; }
+        .logo span { color: var(--primary); }
 
+        .nav-links { list-style: none; display: flex; gap: 2.5rem; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--text-main); 
+            font-weight: 500; 
+            font-size: 0.95rem;
+            transition: 0.3s; 
+        }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* --- Hero Section --- */
+        .hero { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 10rem 10% 5rem 10%; 
+            min-height: 100vh; 
+            gap: 4rem; 
+        }
+
+        .hero-content { flex: 1.2; }
+
+        /* Badge de profesión */
+        .profession-badge {
+            display: inline-block;
+            background: #e0e7ff;
+            color: var(--primary-dark);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-content h1 { 
+            font-size: 4rem; 
+            line-height: 1.1; 
+            margin-bottom: 1.5rem; 
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        /* Texto degradado */
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p { 
+            font-size: 1.2rem; 
+            margin-bottom: 2.5rem; 
+            max-width: 550px; 
+            color: var(--text-muted); 
+        }
+
+        /* Imagen con animación */
+        .hero-image { 
+            flex: 0.8; 
+            display: flex; 
+            justify-content: center; 
+            position: relative; 
+        }
+
+        .image-wrapper {
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-image img { 
+            width: 380px; 
+            height: 380px; 
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Forma orgánica */
+            object-fit: cover; 
+            border: 8px solid var(--white); 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12); 
+            background: var(--primary); 
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* --- Botones Modernos --- */
+        .btn-container { display: flex; gap: 1.2rem; }
+        
+        .btn { 
+            padding: 1rem 2.2rem; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            border: none; 
+            cursor: pointer; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 12px;
+            font-size: 1rem;
+        }
+
+        .btn-primary { 
+            background-color: var(--primary); 
+            color: white; 
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
+        }
+
+        .btn-primary:hover { 
+            background-color: var(--primary-dark); 
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-download { 
+            background-color: var(--white); 
+            color: var(--text-main); 
+            border: 1px solid #e2e8f0;
+        }
+
+        .btn-download:hover { 
+            background-color: #f1f5f9;
+            transform: translateY(-5px);
+        }
+
+        /* --- Stats --- */
+        .stats { 
+            display: flex; 
+            gap: 4rem; 
+            margin-top: 4rem; 
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .stat-item h3 { font-size: 2.2rem; color: var(--text-main); }
+        .stat-item span { color: var(--primary); }
+        .stat-item p { 
+            font-size: 0.85rem; 
+            text-transform: uppercase; 
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* --- Responsive --- */
         @media (max-width: 968px) {
-            .hero { flex-direction: column-reverse; text-align: center; padding: 2rem 5%; }
-            .hero-content h1 { font-size: 2.5rem; }
-            .btn-container { justify-content: center; }
+            nav { padding: 1rem 5%; }
+            .nav-links { display: none; } /* Podrías añadir un menú hamburguesa luego */
+            .hero { flex-direction: column-reverse; text-align: center; padding: 8rem 5% 3rem 5%; }
+            .hero-content h1 { font-size: 2.8rem; }
+            .hero-content p { margin: 0 auto 2.5rem auto; }
+            .btn-container { justify-content: center; flex-direction: column; }
             .stats { justify-content: center; gap: 2rem; }
-            .hero-image img { width: 300px; height: 300px; }
+            .hero-image img { width: 280px; height: 280px; }
         }
     </style>
 </head>
@@ -66,22 +224,24 @@
         <ul class="nav-links">
             <li><a href="#">Inicio</a></li>
             <li><a href="#sobre-mi">Perfil</a></li>
-            <li><a href="https://github.com/maferCachopo">GitHub</a></li>
+            <li><a href="https://github.com/maferCachopo" target="_blank">GitHub</a></li>
         </ul>
     </nav>
 
     <section class="hero">
         <div class="hero-content">
-            <h2>Ingeniera en Informática</h2>
-            <h1>Encantada de conocerte, soy María Fernanda</h1>
+            <span class="profession-badge">Ingeniera en Informática</span>
+            <h1>Encantada, soy <br><span class="gradient-text">María Fernanda</span></h1>
             <p>
                 Especialista en desarrollo web con experiencia en <b>Laravel, Vue.js y WordPress</b>. 
-                Enfocada en crear soluciones digitales optimizadas y funcionales[cite: 13, 17].
+                Enfocada en crear soluciones digitales optimizadas y funcionales.
             </p>
             
             <div class="btn-container">
-                <a href="https://github.com/maferCachopo" class="btn btn-primary">Ver Proyectos</a>
-                <a href="https://drive.google.com/file/d/1SrrtpJ4DKWyEeqrsryK1z36AHk0WKOdh/view?usp=drive_link" download="CV_Mafer_Cachopo.pdf" class="btn btn-download">
+                <a href="https://github.com/maferCachopo" class="btn btn-primary" target="_blank">
+                    Ver Proyectos <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="TU_LINK_DE_CV" class="btn btn-download">
                     <i class="fas fa-download"></i> Descargar CV
                 </a>
             </div>
@@ -89,17 +249,19 @@
             <div class="stats">
                 <div class="stat-item">
                     <h3>2<span>+</span></h3>
-                    <p>Años de Experiencia [cite: 3, 6]</p>
+                    <p>Años de Experiencia</p>
                 </div>
                 <div class="stat-item">
                     <h3>10<span>+</span></h3>
-                    <p>Proyectos Web [cite: 15, 59]</p>
+                    <p>Proyectos Web</p>
                 </div>
             </div>
         </div>
 
         <div class="hero-image">
-            <img src="https://www.canva.com/design/DAG8J_CFtQ8/507uolPGHwGLpmjpJRr1rQ/edit?utm_content=DAG8J_CFtQ8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" alt="María Fernanda Cachopo">
+            <div class="image-wrapper">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&h=400&fit=crop" alt="María Fernanda Cachopo">
+            </div>
         </div>
     </section>
 
